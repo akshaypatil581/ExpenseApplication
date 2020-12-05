@@ -22,6 +22,22 @@ class Expsenses extends Component {
  
 
 
+async componentDidMount() {
+
+ 
+
+    const response= await fetch('/api/categories');
+    const body= await response.json();
+    this.setState({Categories : body , isLoading :false});
+
+
+    const responseExp= await fetch('/api/expenses');
+    const bodyExp = await responseExp.json();
+    this.setState({Expsenses : bodyExp , isLoading :false});
+    console.log(bodyExp);
+
+}
+
 
 
 
