@@ -21,7 +21,25 @@ class Expsenses extends Component {
   //   },
  
 
+ 
 
+async handleSubmit(event){
+ 
+  const item = this.state.item;
+
+
+  await fetch(`/api/expenses`, {
+    method : 'POST',
+    headers : {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body : JSON.stringify(item),
+  });
+  
+  event.preventDefault();
+  this.props.history.push("/expenses");
+}
 
 
 handleChange(event){
