@@ -22,6 +22,27 @@ class Expsenses extends Component {
  
 
 
+
+
+
+
+
+
+async remove(id){
+    await fetch(`/api/expenses/${id}` , {
+      method: 'DELETE' ,
+      headers : {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json'
+      }
+
+    }).then(() => {
+      let updatedExpenses = [...this.state.Expsenses].filter(i => i.id !== id);
+      this.setState({Expsenses : updatedExpenses});
+    });
+
+}
+
 async componentDidMount() {
 
  
