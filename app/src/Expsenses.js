@@ -24,6 +24,25 @@ class Expsenses extends Component {
 
 
 
+handleChange(event){
+  const target= event.target;
+  const value= target.value;
+  const name = target.name;
+  let item={...this.state.item};
+  item[name] = value;
+  this.setState({item});
+  console.log(item);
+}
+
+
+handleDateChange(date){
+  let item={...this.state.item};
+  item.expensedate= date;
+  this.setState({item});
+
+}
+
+
 
 
 
