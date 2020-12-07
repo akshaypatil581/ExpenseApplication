@@ -21,7 +21,31 @@ class Expsenses extends Component {
   //   },
  
 
- 
+  emptyItem = {
+    description : '' ,
+    expensedate : new Date(),
+    id:104,
+    location : '',
+    category : {id:1 , name:'Travel'}
+}
+
+
+constructor(props){
+  super(props)
+
+  this.state = { 
+    isLoading :false,
+    Categories:[],
+    Expsenses : [],
+    date :new Date(),
+    item : this.emptyItem
+   }
+
+   this.handleSubmit= this.handleSubmit.bind(this);
+   this.handleChange= this.handleChange.bind(this);
+   this.handleDateChange= this.handleDateChange.bind(this);
+
+} 
 
 async handleSubmit(event){
  
